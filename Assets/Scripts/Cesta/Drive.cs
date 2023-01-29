@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Drive : MonoBehaviour
 {
-    //public float speed = 10.0f;
+    //Variables para mover al jugador
 
     private float deltaX, deltaY;
     private Rigidbody2D rb;
 
     private void Start()
     {
+        //Asignamos el Rigidbody2d del jugador
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        //float translation = Input.GetAxis("Horizontal") * speed;
-        //translation *= Time.deltaTime;
-        //transform.Translate(translation, 0, 0);
+        //Detectamos cuando el jugador esta tocando la pantalla y movemos el player a la direccion en la que se mueva el jugador
 
         if (Input.touchCount > 0)
         {

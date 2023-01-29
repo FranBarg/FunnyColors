@@ -17,8 +17,9 @@ public class PointCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Inicializamos los puntos a 0
         GameManager.singleton.Points = 0;
-
+        //Obtenemos el nombre de la escena actual
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
     }
@@ -26,16 +27,18 @@ public class PointCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Actualizamos continuamente los puntos que tenemos en pantalla
         pointsText.text = "Puntos: " + GameManager.singleton.Points.ToString() + "/30";
 
         if (sceneName == "Tocar")
         {
+            //Detectamos cuando llega el objetivo de puntos final y cargamos la siguiente escena
             if (GameManager.singleton.Points >= 30)
             {
                 if (!end)
                 {
                     GameManager.singleton.PlaySound("win");
-
+                    //Detectamos que se activa el observer y realizamos su funcion
                     youWin.Ocurred(this.gameObject);
                     end = true;
                 }
@@ -54,12 +57,14 @@ public class PointCounter : MonoBehaviour
         }
         else if (sceneName == "Cesta")
         {
+            //Detectamos cuando llega el objetivo de puntos final y cargamos la siguiente escena
             if (GameManager.singleton.Points >= 30)
             {
                 if (!end)
                 {
                     GameManager.singleton.PlaySound("win");
 
+                    //Detectamos que se activa el observer y realizamos su funcion
                     youWin.Ocurred(this.gameObject);
                     end = true;
                 }
@@ -69,6 +74,10 @@ public class PointCounter : MonoBehaviour
                     if (PlayerPrefs.GetInt("NumberStars") < 2)
                     {
                         PlayerPrefs.SetInt("NumberStars", 2);
+                    }
+                    if (PlayerPrefs.GetInt("NumberChains") < 2)
+                    {
+                        PlayerPrefs.SetInt("NumberChains", 2);
                     }
                     SceneManager.LoadScene("Fruta");
 

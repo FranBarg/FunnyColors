@@ -5,13 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class PoolItem
 {
+    //Variables para crear la pool
     public GameObject prefab;
     public int amount;
     public bool expandable;
 }
 public class Pool : MonoBehaviour
 {
-    
+    //Generamos una lista de objetos que queremos generar y los objetos generados
     public List<PoolItem> items;
     public List<GameObject> pooledItems;
 
@@ -22,11 +23,12 @@ public class Pool : MonoBehaviour
         singleton = this;   
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        //Generamos una nueva lista para los objetos guardados
         pooledItems = new List<GameObject>();
-
+        //Generamos los objetos listados
         foreach(PoolItem item in items)
         {
             for(int i=0; i<item.amount; i++)
@@ -37,13 +39,7 @@ public class Pool : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Creamos un accesor
     public GameObject Get(string tag)
     {
         for (int i = 0; i < pooledItems.Count; i++)

@@ -5,9 +5,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     
-    // Start is called before the first frame update
     void Start()
     {
+        //Buscamos los clips de audio y se lo asignamos a las variables
         GameManager.singleton.Boton = Resources.Load<AudioClip>("boton");
         GameManager.singleton.Cesta = Resources.Load<AudioClip>("cesta");
         GameManager.singleton.Disparo = Resources.Load<AudioClip>("disparo");
@@ -18,9 +18,6 @@ public class AudioManager : MonoBehaviour
         GameManager.singleton.AudioSCR = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 }

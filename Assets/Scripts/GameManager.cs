@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+//Patron Singleton
 public sealed class GameManager
 {
+    //Añadimos todas las variables que necesitamos usar en otros scripts con sus respectivos accesors
     private float _points;
     public float Points
     {
@@ -72,6 +73,7 @@ public sealed class GameManager
         }
     }
 
+    //Funcion  para activar los distintos sonidos del juego
     public void PlaySound(string clip)
     {
         switch (clip)

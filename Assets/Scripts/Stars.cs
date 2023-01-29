@@ -14,6 +14,7 @@ public class Stars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //accedemos a memoria para Activar los estrellas
         if (PlayerPrefs.GetInt("NumberStars") == 1)
         {
             star1.SetActive(true);

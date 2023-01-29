@@ -14,9 +14,10 @@ public class ManagerColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+      // Al hacer click con el raton cambia de color el objeto al color guardado
         if (Input.GetMouseButtonDown(0))
         {
+
             GameManager.singleton.PlaySound("pintura");
 
             RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
@@ -26,6 +27,7 @@ public class ManagerColor : MonoBehaviour
             
 
     }
+    // Cambia el color guardado
     public void cambiarColorActivo (Image miImage)
     {
         colorActivo = miImage.color;

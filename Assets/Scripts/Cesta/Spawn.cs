@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour
     void FixedUpdate()
     {
         //Añadimos una probabilidad para crear un objeto y lo creamos cuando suceda
-        if (Random.Range(0, 100) < 5)
+        if (Random.Range(0, 100) < 2)
         {
             
             GameObject a = Pool.singleton.Get("Asteroid");

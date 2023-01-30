@@ -13,7 +13,7 @@ public class SpawnerTocar : MonoBehaviour
     
 
     
-    void Update()
+    void FixedUpdate()
     {
         //Añadimos una probabilidad para crear un objeto y lo creamos cuando suceda
         if (Random.Range(0, 100) < 5)
